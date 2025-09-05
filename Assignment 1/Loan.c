@@ -26,6 +26,7 @@ int main() {
     float denom = pow((1 - (interest/12)),12*loanlength);
     float mult = payment/(interest/12);
     float max = mult*(1/denom);
+    // Display results
     printf("Your monthly payment is:  $%.2f \n", payment);
     printf("Your maximum loan is: $%.0f",max);
     return 0;
