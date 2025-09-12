@@ -23,16 +23,20 @@ int main {
 
 	for (i = 1; i <= n; i++) {
 		if (choice == 1) {
-			int factval = 1
-			int factin 2*n
+			int factin = 2*n
 			for (int j = 1; j <= factin; j++) {
-				factval *= i;}
+				factin *= j;}
 			float fraction = (pow(x,2*n)/factval);
 			double current = pow(-1,n)*fraction;
 			sum += current;
 		}
 
 		else if (choice == 2) {
+			int factin = (2*n) - 1
+			for (int j = 1; j <= factin; j++) {
+				factin *= j;}
+			float fraction = (pow(x,(2n-1))/factin);
+			double current = pow(-1,(n-1))*fraction;
 		}
 
 		else if (choice == 3) {
