@@ -34,7 +34,7 @@ int main() {
 					unsigned long long fact = 1;
 					for (int j = 1; j <= factin; j++) {
 						fact *= j;}
-					float fraction = pow(x,2*i)/factin;
+					float fraction = pow(x,2*i)/fact;
 					current = pow(-1,i)*fraction;
 
 
@@ -45,7 +45,7 @@ int main() {
 					int factin = 2*i - 1;
 					for (int j = 1; j <= factin; j++) {
 						fact *= j;}
-					double fraction = (pow(x,(2*i-1))/factin);
+					double fraction = (pow(x,(2*i-1))/fact);
 					current = pow(-1,(i-1))*fraction;
 				}
 
@@ -54,7 +54,7 @@ int main() {
 					int factin = i;
 					for (int j = 1; j <= factin; j++) {
 						fact *= j;}
-					current = pow(x,i)/factin;
+					current = pow(x,i)/fact;
 				}
 				else if (choice == 4) {
 					break;
