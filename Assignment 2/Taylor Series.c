@@ -11,16 +11,16 @@ int main() {
 	printf("3. e^x\n");
 	printf("4. Quit\n");
 	while (choice != 4) {
-		printf("Select a function to approximate:");
+		printf("Select a function to approximate: ");
 		scanf("%d",&choice);
 		while(choice < 1 || choice > 4) {
 			printf("Invalid choice\n");
 			scanf("%d",&choice);
 		}
-		printf("Select a value for X");
+		printf("Select a value for X: ");
 		scanf("%d",&x);
 
-		printf("Enter a value for the number of iterations:\n");
+		printf("Enter a value for the number of iterations: ");
 		scanf("%d",&n);
 		while (n <= 0) {
 			printf("Must be more than zero\n");
@@ -31,8 +31,9 @@ int main() {
 
 				if (choice == 1) {
 					int factin = 2*i;
+					unsigned long long fact = 1;
 					for (int j = 1; j <= factin; j++) {
-						factin *= j;}
+						fact *= j;}
 					float fraction = pow(x,2*i)/factin;
 					current = pow(-1,i)*fraction;
 
@@ -40,23 +41,29 @@ int main() {
 				}
 
 				else if (choice == 2) {
+					unsigned long long fact = 1;
 					int factin = 2*i - 1;
 					for (int j = 1; j <= factin; j++) {
-						factin *= j;}
-					float fraction = (pow(x,(2i-1))/factin);
+						fact *= j;}
+					double fraction = (pow(x,(2*i-1))/factin);
 					current = pow(-1,(i-1))*fraction;
 				}
 
 				else if (choice == 3) {
+					unsigned long long fact = 1;
 					int factin = i;
 					for (int j = 1; j <= factin; j++) {
-						factin *= j;}
+						fact *= j;}
 					current = pow(x,i)/factin;
+				}
+				else if (choice == 4) {
+					break;
 				}
 				sum+=current;
 			}
-		return 0;
+		printf("Your result is: %f\n",sum);
 		}
+	return 0;
 	}
 
 
