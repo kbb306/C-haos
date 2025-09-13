@@ -1,8 +1,8 @@
 #include <stdio.h>
 #include<math.h>
-unsigned long long factorial(int n) {
+unsigned long long factorial(int n) { // Factorial function based on your prototype
         if (n == 0) {
-                return 1;
+                return 1; // You missed this edge case!
         }
         long long  start = 1;
         int i;
@@ -13,9 +13,11 @@ unsigned long long factorial(int n) {
 }
 
 int main() {
+        //Declare vars
         int end, choice = 0, x;
         double sum, formula = 0;
-        while (choice !=4) {
+        //Main menu
+        while (choice !=4) {     //Loop until 4 is chosen
                 sum= 0;
                 printf("Welcome to Taylor Series\n");
                 printf("1. Approximate cos(x)\n");
@@ -24,7 +26,8 @@ int main() {
                 printf("4. Quit\n");
                 printf("Select a choice: ");
                 scanf("%d",&choice);
-                if (choice >0 && choice <4) {
+
+                if (choice >0 && choice <4) { // Get numbers for series
                         printf("Enter the value of x: ");
                         scanf("%d",&x);
                         printf("Enter the number of iterations: ");
@@ -35,9 +38,9 @@ int main() {
                         }
 
                         switch(choice) {
-                                case 1: {
+                                case 1: { // cos(x)
                                         if (end > 10) {
-                                                printf("long long variable space exceeded, defaulting to maximum.");
+                                                printf("long long variable space exceeded, defaulting to maximum."); // Integer overflow failsafe
                                                 end = 10;
                                         }
                                         for (int n = 0; n < end; n++) {
@@ -49,7 +52,7 @@ int main() {
                                         break;
                                 }
 
-                                case 2: {
+                                case 2: { //sin(x)
                                         if (end > 10) {
                                                 printf("long long variable space exceeded, defaulting to maximum.");
                                                 end = 10;
@@ -65,7 +68,7 @@ int main() {
                                 }
 
 
-                                case 3: {
+                                case 3: { //e^x
                                         for (int n = 0; n <= end; n++) {
                                                 if (end > 20) {
                                                         printf("long long variable space exceeded, defaulting to maximum.");
