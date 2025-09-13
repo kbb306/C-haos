@@ -1,78 +1,90 @@
-#include<stdio.h>
+#include <stdio.h>
 #include<math.h>
-//Declare Variables
+unsigned long long factorial(int n) {
+        if (n == 0) {
+                return 1;
+        }
+        long long  start = 1;
+        int i;
+        for(i = n; i > 1; i--) {
+                start *= i;
+        }
+
+}
 
 int main() {
-	int x, choice=0, n;
-	double current = 0, sum = 0;
-	printf("Available functions\n");
-	printf("1. cos(x)\n");
-	printf("2. sin(x)\n");
-	printf("3. e^x\n");
-	printf("4. Quit\n");
-	while (choice != 4) {
-		sum = 0;
-		printf("Select a function to approximate: ");
-		scanf("%d",&choice);
-		while(choice < 1 || choice > 4) {
-			printf("Invalid choice\n");
-			scanf("%d",&choice);
-		}
-		printf("Select a value for X: ");
-		scanf("%d",&x);
+        int end, choice = 0, x;
+        double sum, formula = 0;
+        while (choice !=4) {
+                sum= 0;
+                printf("Welcome to Taylor Series\n");
+                printf("1. Approximate cos(x)\n");
+                printf("2. Approximate sin(x)\n");
+                printf("3. Approximate e^x\n");
+                printf("4. Quit\n");
+                printf("Select a choice: ");
+                scanf("%d",&choice);
+                if (choice >0 && choice <4) {
+                        printf("Enter the value of x: ");
+                        scanf("%d",&x);
+                        printf("Enter the number of iterations: ");
+                        scanf("%d",&end);
+                        while (end <=0 ) {
+                                printf("Please enter another number of iterations: ");
+                                scanf("%d",&end);
+                        }
 
-		printf("Enter a value for the number of iterations: ");
-		scanf("%d",&n);
-		while (n <= 0) {
-			printf("Must be more than zero\n");
-			scanf("%d",&n);
-		}
+                        switch(choice) {
+                                case 1: {
+                                        if (end > 10) {
+                                                printf("long long variable space exceeded, defaulting to maximum.");
+                                                end = 10;
+                                        }
+                                        for (int n = 0; n < end; n++) {
+                                                printf("Fact =%lld\n",factorial(2*n));
+                                                formula = pow(-1, n) * (pow(x,2*n)/factorial(2*n));
+                                                sum += formula;
+                                        }
+                                        printf("The sum of the series is: %lf\n",sum);
+                                        break;
+                                }
+
+                                case 2: {
+                                        if (end > 10) {
+                                                printf("long long variable space exceeded, defaulting to maximum.");
+                                                end = 10;
+                                        }
+                                        for (int n = 1; n < end; n++) {
+                                                printf("Fact =%lld\n",factorial(2*n));
+
+                                                formula = (pow(-1, n-1) * pow(x,(2*n)-1))/factorial(2*n-1);
+                                                sum += formula;
+                                        }
+                                        printf("The sum of the series is: %lf\n",sum);
+                                        break;
+                                }
 
 
-		if (choice == 1) { // cos()
-			for (int i = 0; i < n; i++) {
-				unsigned long long fact = 1;
-				float factin = 2*i;
-				for (int j = factin; j > 1; j--) {
-					fact *= j;}
-				double fraction = pow(x,2*i)/(fact);
-				current = pow(-1,i)*fraction;
-				sum+=current;
-			}
-
-		}
-
-		else if (choice == 2) { //sin()
-			for (int i = 1; i < n; i++) {
-				unsigned long long fact = 1;
-				float factin = 2*i - 1;
-				for (int j = factin; j > i; j--) {
-					fact *= j;}
-				double fraction = (pow(x,(2*i-1))/(fact);
-				current = pow(-1,(i-1))*fraction;
-				sum+=current;
-			}
-		}
-
-		else if (choice == 3) { // e^x
-			for (int i = 0; i < n; i++) {
-				unsigned long long fact = 1;
-				float factin = i;
-				for (int j = factin; j > i; j--) {
-					fact *= j;}
-				current = pow(x,i)/(fact);
-				sum+=current;
-			}
-		}
-		else if (choice == 4) {
-			break;
-		}
-		printf("Your result is: %f\n",sum);
-		sum = 0;
-		current = 0;
-	}
-	return 0;
+                                case 3: {
+                                        for (int n = 0; n <= end; n++) {
+                                                if (end > 20) {
+                                                        printf("long long variable space exceeded, defaulting to maximum.");
+                                                        end = 20;
+                                                }
+                                                formula = pow(x,n)/factorial(n);
+                                                sum += formula;
+                                        }
+                                        printf("The sum of the series is: %lf\n",sum);
+                                        break;
+                                }
+                        }
+                }
+        }
+        return 0;
 }
 
 
-// Created by User on 9/11/2025.
+
+
+
+
