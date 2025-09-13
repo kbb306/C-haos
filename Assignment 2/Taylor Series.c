@@ -30,10 +30,10 @@ int main() {
 
 
 		if (choice == 1) { // cos()
-			for (int i = 0; i <= n; i++) {
+			for (int i = 0; i < n; i++) {
 				unsigned long long fact = 1;
 				float factin = 2*i;
-				for (int j = 1; j <= factin; j++) {
+				for (int j = factin; j > 1; j--) {
 					fact *= j;}
 				double fraction = pow(x,2*i)/(fact);
 				current = pow(-1,i)*fraction;
@@ -43,10 +43,10 @@ int main() {
 		}
 
 		else if (choice == 2) { //sin()
-			for (int i = 1; i <= n; i++) {
+			for (int i = 1; i < n; i++) {
 				unsigned long long fact = 1;
 				float factin = 2*i - 1;
-				for (int j = 1; j <= factin; j++) {
+				for (int j = factin; j > i; j--) {
 					fact *= j;}
 				double fraction = (pow(x,(2*i-1))/(fact);
 				current = pow(-1,(i-1))*fraction;
@@ -55,10 +55,10 @@ int main() {
 		}
 
 		else if (choice == 3) { // e^x
-			for (int i = 0; i <= n; i++) {
+			for (int i = 0; i < n; i++) {
 				unsigned long long fact = 1;
 				float factin = i;
-				for (int j = 1; j <= factin; j++) {
+				for (int j = factin; j > i; j--) {
 					fact *= j;}
 				current = pow(x,i)/(fact);
 				sum+=current;
