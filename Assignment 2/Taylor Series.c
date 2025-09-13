@@ -11,6 +11,7 @@ int main() {
 	printf("3. e^x\n");
 	printf("4. Quit\n");
 	while (choice != 4) {
+		sum = 0;
 		printf("Select a function to approximate: ");
 		scanf("%d",&choice);
 		while(choice < 1 || choice > 4) {
@@ -27,45 +28,51 @@ int main() {
 			scanf("%d",&n);
 		}
 
-			for (int i = 1; i <= n; i++) {
 
-				if (choice == 1) {
-					int factin = 2*i;
-					unsigned long long fact = 1;
-					for (int j = 1; j <= factin; j++) {
-						fact *= j;}
-					float fraction = pow(x,2*i)/fact;
-					current = pow(-1,i)*fraction;
-
-
-				}
-
-				else if (choice == 2) {
-					unsigned long long fact = 1;
-					int factin = 2*i - 1;
-					for (int j = 1; j <= factin; j++) {
-						fact *= j;}
-					double fraction = (pow(x,(2*i-1))/fact);
-					current = pow(-1,(i-1))*fraction;
-				}
-
-				else if (choice == 3) {
-					unsigned long long fact = 1;
-					int factin = i;
-					for (int j = 1; j <= factin; j++) {
-						fact *= j;}
-					current = pow(x,i)/fact;
-				}
-				else if (choice == 4) {
-					break;
-				}
+		if (choice == 1) { // cos()
+			for (int i = 0; i <= n; i++) {
+				unsigned long long fact = 1;
+				float factin = 2*i;
+				for (int j = 1; j <= factin; j++) {
+					fact *= j;}
+				double fraction = pow(x,2*i)/(fact);
+				current = pow(-1,i)*fraction;
 				sum+=current;
 			}
-		printf("Your result is: %f\n",sum);
+
 		}
-	return 0;
+
+		else if (choice == 2) { //sin()
+			for (int i = 1; i <= n; i++) {
+				unsigned long long fact = 1;
+				float factin = 2*i - 1;
+				for (int j = 1; j <= factin; j++) {
+					fact *= j;}
+				double fraction = (pow(x,(2*i-1))/(fact);
+				current = pow(-1,(i-1))*fraction;
+				sum+=current;
+			}
+		}
+
+		else if (choice == 3) { // e^x
+			for (int i = 0; i <= n; i++) {
+				unsigned long long fact = 1;
+				float factin = i;
+				for (int j = 1; j <= factin; j++) {
+					fact *= j;}
+				current = pow(x,i)/(fact);
+				sum+=current;
+			}
+		}
+		else if (choice == 4) {
+			break;
+		}
+		printf("Your result is: %f\n",sum);
+		sum = 0;
+		current = 0;
 	}
+	return 0;
+}
 
 
 // Created by User on 9/11/2025.
-//
