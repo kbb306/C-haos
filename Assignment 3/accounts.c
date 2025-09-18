@@ -1,7 +1,7 @@
 //
 // Created by User on 9/18/2025.
 //
-#include <stio.h>
+#include <stdio.h>
 #include "accounts.h"
 #include <stdio.h>
 
@@ -17,7 +17,7 @@ void deposit(double x) {
 };
 
 int withdraw (double x) {
-    if (x > 0.0 && balance >= 0) {
+    if (x > 0.0 && balance >= x) {
         balance = balance - x;
         return 1;
     }
@@ -32,7 +32,7 @@ void check_balance() {
 }
 
 int open_account(double input) {
-    printf("You are opening an account at the Bank of Evil.");
+    printf("You are opening an account at the Bank of Evil.\n");
     printf("Please deposit at least $50. ");
     scanf("%lf",&input);
     if (input < 50.00) {

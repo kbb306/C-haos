@@ -9,13 +9,14 @@ int main() {
         x = open_account(0.00);
     }
     int choice = 0;
-    while(choice <= 0 || choice >= 4) {
-        printf("Welcome to the ATM of Evil!");
-        printf("Please choose an option: ");
+    while(choice != 4) {
+        printf("Welcome to the ATM of Evil!\n");
         printf("1. Deposit Balance\n");
         printf("2. Withdraw Balance\n");
         printf("3. Check Balance\n");
         printf("4. Exit\n");
+        printf("Please choose an option: ");
+
         scanf("%d",&choice);
         if(choice == 1) {
             double input;
@@ -41,7 +42,11 @@ int main() {
         else if(choice == 3) {
                 check_balance();
         }
+        else {
+            printf("Invalid Option");
         }
+        }
+    return 0;
     }
 //
 // Created by User on 9/18/2025.
