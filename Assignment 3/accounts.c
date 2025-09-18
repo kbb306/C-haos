@@ -22,7 +22,7 @@ int withdraw (double x) {
         return 1;
     }
     else {
-        printf("No withdrawl made, balance is %.2f\n",x);
+        printf("No withdrawl made, balance is %.2f\n",balance);
         return 0;
     }
 }
