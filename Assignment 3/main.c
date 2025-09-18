@@ -41,7 +41,7 @@ int main() {
                 }
                 else {
                     result = withdraw(input);
-                    if (result == 0){printf("Withdrawl cancelled")};
+                    if (result == 0){printf("Withdrawl cancelled");};
                 }
 
             }
