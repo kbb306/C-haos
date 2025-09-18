@@ -32,12 +32,20 @@ int main() {
         else if(choice == 2) {
             int result = 3;
             double input;
-            while (result != 1) {
+            while (result > 1) {
                 printf("Enter an amount to withdraw: ");
-                scanf("%lf",&input);
-                result = withdraw(input);
-                if (result == 0) {printf("Invalid Input");}
+                scanf("%d",&input);
+                if (input < 0.00) {
+                    result = 3;
+                    printf("Invalid input, try again.\n");
+                }
+                else {
+                    result = withdraw(input);
+                    if (result == 0){printf("Withdrawl cancelled")};
+                }
+
             }
+
         }
         else if(choice == 3) {
                 check_balance();

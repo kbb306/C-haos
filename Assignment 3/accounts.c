@@ -12,7 +12,7 @@ void deposit(double x) {
         balance = balance + x;
     }
     else {
-        printf("You can't deposit %f, balance %f\n", x, balance);
+        printf("You can't deposit %f, balance %.2f\n", x, balance);
     }
 };
 
@@ -22,7 +22,7 @@ int withdraw (double x) {
         return 1;
     }
     else {
-        printf("No withdrawl made, balance is %f\n",x);
+        printf("No withdrawl made, balance is %.2f\n",x);
         return 0;
     }
 }
