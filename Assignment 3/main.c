@@ -50,6 +50,9 @@ int main() {
         else if(choice == 3) {
                 check_balance();
         }
+        else if(choice == 4) {
+            printf("Goodbye\n");
+        }
         else {
             printf("Invalid Option");
         }
