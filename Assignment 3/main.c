@@ -34,7 +34,7 @@ int main() {
             double input;
             while (result > 1) {
                 printf("Enter an amount to withdraw: ");
-                scanf("%d",&input);
+                scanf("%lf",&input);
                 if (input < 0.00) {
                     result = 3;
                     printf("Invalid input, try again.\n");
