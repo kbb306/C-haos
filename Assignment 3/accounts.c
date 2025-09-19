@@ -18,7 +18,7 @@ void deposit(double x) {
 
 int withdraw (double x) {
     if (x > 0.0 && balance >= x) {
-        balance = balance - x;
+        balance = balance - x; // Unsure why 'balance -- x was invalid
         return 1;
     }
     else {
@@ -32,7 +32,7 @@ void check_balance() {
 }
 
 int open_account(double input) {
-    printf("You are opening an account at the Bank of Evil.\n");
+    printf("You are opening an account at the Bank of Evil.\n"); // Guess the reference!
     printf("Please deposit at least $50. ");
     scanf("%lf",&input);
     if (input < 50.00) {
