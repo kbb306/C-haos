@@ -10,4 +10,5 @@ void fill_array_random(int arr[], int size){}
 void print_array(int arr[], int size){}
 void sort_array_ascend(int arr[], int size){}
 void sort_array_descend(int arr[], int size){}
+void cancel(int arr[], int size){}
 #endif //C_HAOS_HELPER_H
