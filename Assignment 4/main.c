@@ -90,7 +90,8 @@ int main() {
 
                 };
             case 2: {
-                printf(twelve);
+                fptr = &print_array;
+                fptr(twelve, i);
             }
             case 3: {
                 sortmenu(twelve,i);
