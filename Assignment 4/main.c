@@ -31,12 +31,39 @@ int fillmenu(int arr[], int size){
     fptr(arr, size);
     exists = 1;
     }
+    return 0;
 }
 
 
 
 
-int sortmenu(int arr[], int size){}
+int sortmenu(int arr[], int size) {
+    int choice = 0;
+    while (choice != 3) {
+        printf("Would you like to sort the array in...\n");
+        printf("1. Ascending Order\n");
+        printf("2. Descending Order\n");
+        printf("3. Don't sort or quit\n");
+        printf("Choose your choice: ");
+        scanf("%d", &choice);
+        switch (choice) {
+            case 1: {
+                fptr = &sort_array_ascend;
+                break;
+            }
+            case 2: {
+                fptr = &sort_array_descend;
+                break;
+            }
+            case 3: {
+                fptr = &cancel;
+                break;
+            }
+        }
+    }
+    fptr(arr, size);
+    return 0;
+}
 
 int main() {
     int choice = 0;
