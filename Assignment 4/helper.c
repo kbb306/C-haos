@@ -34,6 +34,42 @@ void fill_array_random(int arr[], int size) {
     }
 }
 
+void sort_array_ascend(int arr[], int size) {
+    for (int i = 0; i < size - 1; i++) {
+        int *var1 = arr;
+        int *var2 = var1++;
+        int temp = 0;
+        for (int j = i + 1; j < size; j++) {
+            if (*var1 > *var2) {
+                temp = *var1;
+                *var1 = *var2;
+                *var2 = temp;
+            }
+            var1++;
+            var2++;
+
+
+        }
+    }
+}
+
+void sort_array_descend(int arr[], int size) {
+    for (int i = 0; i < size - 1; i++) {
+        int *var1 = arr;
+        int *var2 = var1++;
+        int temp = 0;
+        for (int j = i + 1; j > size; j++) {
+            if (*var1 > *var2) {
+                temp = *var1;
+                *var1 = *var2;
+                *var2 = temp;
+            }
+            var1++;
+            var2++;
+        }
+    }
+}
+
 //
 // Created by Kyler Belshaw on 9/25/25.
 //
