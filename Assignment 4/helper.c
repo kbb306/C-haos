@@ -2,11 +2,11 @@
 #include <stdlib.h>
 #include "helper.h"
 #include <time.h>
-
+int i = 0;
 
 void print_array(int arr[], int size) {
+    int *j = arr;
     for (int i = 0; i < size; i++) {
-        int *j = arr;
         printf("%d ", *j);
         j++;
     }
@@ -14,7 +14,7 @@ void print_array(int arr[], int size) {
 
 void fill_array_odd(int arr[], int size) {
     int *j = arr;
-    for (int i = 0; i < size; i++) {
+    for (i = 0; i < size; i++) {
         *j = 2 * i - 1;
         j ++;
     }
@@ -22,7 +22,7 @@ void fill_array_odd(int arr[], int size) {
 
 void fill_array_even(int arr[], int size) {
     int *j = arr;
-    for (int i = 0; i < size; i++) {
+    for (i = 0; i < size; i++) {
         *j = 2 * i;
         j++;
     }
@@ -30,14 +30,15 @@ void fill_array_even(int arr[], int size) {
 
 void fill_array_random(int arr[], int size) {
     int *j = arr;
-    for (int i = 0; i < size; i++) {
+    for (i = 0; i < size; i++) {
+        srand((unsigned int)time(NULL));
         *j = rand() % 1001;
         j++;
     }
 }
 
 void sort_array_ascend(int arr[], int size) {
-    for (int i = 0; i < size - 1; i++) {
+    for (i = 0; i < size - 1; i++) {
         int *var1 = arr;
         int *var2 = var1++;
         int temp = 0;
@@ -56,7 +57,7 @@ void sort_array_ascend(int arr[], int size) {
 }
 
 void sort_array_descend(int arr[], int size) {
-    for (int i = 0; i < size - 1; i++) {
+    for (i = 0; i < size - 1; i++) {
         int *var1 = arr;
         int *var2 = var1++;
         int temp = 0;
