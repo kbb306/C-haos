@@ -14,16 +14,16 @@ void print_array(int arr[], int size) {
 
 void fill_array_odd(int arr[], int size) {
     int *j = arr;
-    for (i = 1; i < size; i++) {
-        *j = 2 * i - 1;
+    for (i = 0; i < size; i++) {
+        *j = 2 * (i + 1) - 1;
         j ++;
     }
 }
 
 void fill_array_even(int arr[], int size) {
     int *j = arr;
-    for (i = 2; i < size; i++) {
-        *j = 2 * i;
+    for (i = 0; i < size; i++) {
+        *j = 2 * (i + 1);
         j++;
     }
 }
