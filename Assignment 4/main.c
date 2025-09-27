@@ -4,7 +4,7 @@ void (*fptr)(int[],int);
 int fillmenu(int arr[], int size){
     int exists = 0;
     int choice = 0;
-    while (exists != 1) {
+    while (exists != 1) { //  Name is an artifact from earlier version where user would be prompted to create array here. Still works though!
         printf("Would you like to fill the array with...\n");
         printf("1. Odd Numbers\n");
         printf("2. Even Numbers\n");
@@ -39,7 +39,7 @@ int fillmenu(int arr[], int size){
 
 int sortmenu(int arr[], int size) {
     int choice = 0;
-    while (choice != 3) {
+    while (choice != 3) { //Really stubborn infinite loop bug here, keeping fptr from ever being called. Fixed by adding choice = 3 to the end of all cases.
         printf("Would you like to sort the array in...\n");
         printf("1. Ascending Order\n");
         printf("2. Descending Order\n");
@@ -58,7 +58,7 @@ int sortmenu(int arr[], int size) {
                 break;
             }
             case 3: {
-                fptr = &cancel;
+                fptr = &cancel; //I don't even know if this is getting called.
                 choice = 3;
                 break;
             }
