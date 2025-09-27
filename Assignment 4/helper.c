@@ -75,7 +75,7 @@ void sort_array_descend(int arr[], int size) {
     }
 }
 void cancel(int arr[], int size) {
-    printf("Operation Cancelled");
+    printf("Goodbye");
 }
 
 //
