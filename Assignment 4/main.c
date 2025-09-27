@@ -61,6 +61,7 @@ int sortmenu(int arr[], int size) {
             }
         }
     }
+    printf("Sorting....");
     fptr(arr, size);
     return 0;
 }
@@ -93,11 +94,11 @@ int main() {
                 fptr = &print_array;
                 fptr(twelve, i);
                 break;
-            }
+            };
             case 3: {
                 sortmenu(twelve,i);
                 break;
-            }
+            };
             }
         }
     }
