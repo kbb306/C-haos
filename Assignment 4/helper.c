@@ -5,11 +5,14 @@
 int i = 0;
 
 void print_array(int arr[], int size) {
+    printf("Your array is: \n");
+    printf("[");
     int *j = arr;
     for (int i = 0; i < size; i++) {
         printf("%d ", *j);
         j++;
     }
+    printf("]\n");
 }
 
 void fill_array_odd(int arr[], int size) {
