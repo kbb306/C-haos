@@ -6,6 +6,9 @@
 
 void print_array(int arr[], int size) {
     for (int i = 0; i < size; i++) {
+        int *j = arr;
+        printf("%d ", *j);
+        j++;
     }
 }
 
