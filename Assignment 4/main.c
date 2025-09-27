@@ -80,21 +80,23 @@ int main() {
         printf("Welcome to the Array Display!\n");
         printf("1. Fill the array\n");
         printf("2. Print array\n");
-        printf("3. Sort the array");
+        printf("3. Sort the array\n");
         printf("4. Exit\n");
         printf("Choice: ");
         scanf("%d",&choice);
         switch (choice) {
             case 1: {
                 fillmenu(twelve,i);
-
+                break;
                 };
             case 2: {
                 fptr = &print_array;
                 fptr(twelve, i);
+                break;
             }
             case 3: {
                 sortmenu(twelve,i);
+                break;
             }
             }
         }
