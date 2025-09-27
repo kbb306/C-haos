@@ -30,8 +30,8 @@ void fill_array_even(int arr[], int size) {
 
 void fill_array_random(int arr[], int size) {
     int *j = arr;
-    srand(time(NULL));
     for (int i = 0; i < size; i++) {
+        srand(time(NULL));
         *j = rand() % 1001;
         j++;
     }
