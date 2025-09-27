@@ -49,14 +49,17 @@ int sortmenu(int arr[], int size) {
         switch (choice) {
             case 1: {
                 fptr = &sort_array_ascend;
+                choice = 3;
                 break;
             }
             case 2: {
                 fptr = &sort_array_descend;
+                choice = 3;
                 break;
             }
             case 3: {
                 fptr = &cancel;
+                choice = 3;
                 break;
             }
         }
