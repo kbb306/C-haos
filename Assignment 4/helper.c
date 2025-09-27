@@ -32,7 +32,7 @@ void fill_array_random(int arr[], int size) {
     int *j = arr;
     srand(time(NULL));
     for (int i = 0; i < size; i++) {
-        *j = rand() % 100;
+        *j = rand() % 1001;
         j++;
     }
 }
