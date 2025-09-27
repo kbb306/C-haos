@@ -30,24 +30,27 @@ void fill_array_even(int arr[], int size) {
 
 void fill_array_random(int arr[], int size) {
     int *j = arr;
+    srand((unsigned int)time(NULL));
     for (i = 0; i < size; i++) {
-        srand((unsigned int)time(NULL));
-        *j = rand() % 1001;
+        int rn = rand() % 1001;
+        //printf("%d ", rn);
+        *j = rn;
         j++;
     }
 }
 
-void sort_array_ascend(int arr[], int size) {
+void sort_array_descend(int arr[], int size) {
     for (i = 0; i < size - 1; i++) {
         int *var1 = arr;
         int *var2 = var1++;
-        printf("var1 = %p, var2 = %p\n", var1, var2);
+        printf("var1 = %d, var2 = %d\n", *var1, *var2);
         int temp = 0;
         for (int j = i + 1; j < size; j++) {
             if (*var1 > *var2) {
                 temp = *var1;
                 *var1 = *var2;
                 *var2 = temp;
+                printf("Swapped!\n");
             }
             var1++;
             var2++;
@@ -57,17 +60,18 @@ void sort_array_ascend(int arr[], int size) {
     }
 }
 
-void sort_array_descend(int arr[], int size) {
+void sort_array_ascend(int arr[], int size) {
     for (i = 0; i < size - 1; i++) {
         int *var1 = arr;
         int *var2 = var1++;
-        printf("var1 = %p, var2 = %p\n", var1, var2);
+        printf("var1 = %d, var2 = %d\n", *var1, *var2);
         int temp = 0;
-        for (int j = i + 1; j > size; j++) {
-            if (*var1 > *var2) {
+        for (int j = i + 1; j < size; j++) {
+            if (*var1 < *var2) {
                 temp = *var1;
                 *var1 = *var2;
                 *var2 = temp;
+                printf("Swapped!\n");
             }
             var1++;
             var2++;
