@@ -39,7 +39,7 @@ int fillmenu(int arr[], int size){
 
 int sortmenu(int arr[], int size) {
     int choice = 0;
-    while (choice != 3) { //Really stubborn infinite loop bug here, keeping fptr from ever being called. Fixed by adding choice = 3 to the end of all cases.
+    while (choice != 3) { //Really stubborn infinite loop bug here, keeping fptr from ever being called below. Fixed by adding choice = 3 to the end of all cases.
         printf("Would you like to sort the array in...\n");
         printf("1. Ascending Order\n");
         printf("2. Descending Order\n");
@@ -90,7 +90,7 @@ int main() {
         scanf("%d",&choice);
         switch (choice) {
             case 1: {
-                fillmenu(twelve,i);
+                fillmenu(twelve,i); //Seperate functions for submenus was probably unwarranted.
                 break;
                 };
             case 2: {

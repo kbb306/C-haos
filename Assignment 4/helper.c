@@ -6,19 +6,19 @@ int i = 0; //Entirely unnessecary to declare here, did this as a hail mary when 
 
 void print_array(int arr[], int size) {
     printf("Your array is: \n");
-    printf("[");
+    printf("["); //Makes things prettier
     int *j = arr;
     for (i = 0; i < size; i++) {
         printf("%d ", *j);
         j++;
     }
-    printf("]\n");
+    printf("]\n"); //Ditto
 }
 
 void fill_array_odd(int arr[], int size) {
     int *j = arr;
     for (i = 0; i < size; i++) {
-        *j = 2 * (i + 1) - 1;
+        *j = 2 * (i + 1) - 1; //Stupidly tried setting I to 1 above. After realizing my idiocy, I instead added 1 here.
         j ++;
     }
 }
@@ -26,16 +26,16 @@ void fill_array_odd(int arr[], int size) {
 void fill_array_even(int arr[], int size) {
     int *j = arr;
     for (i = 0; i < size; i++) {
-        *j = 2 * (i + 1);
+        *j = 2 * (i + 1); //And here
         j++;
     }
 }
 
 void fill_array_random(int arr[], int size) {
     int *j = arr;
-    srand((unsigned int)time(NULL));
+    srand((unsigned int)time(NULL)); //Seed for rand()
     for (i = 0; i < size; i++) {
-        int rn = rand() % 1001;
+        int rn = rand() % 1001; //Still not sure what actually got this to give me more than 1 random number
         //printf("%d ", rn);
         *j = rn;
         j++;
