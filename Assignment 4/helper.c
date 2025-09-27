@@ -69,6 +69,9 @@ void sort_array_descend(int arr[], int size) {
         }
     }
 }
+void cancel(int arr[], int size) {
+    printf("Operation Cancelled");
+}
 
 //
 // Created by Kyler Belshaw on 9/25/25.
